@@ -23,7 +23,7 @@
             "description": "Prakash Hospital provides trusted orthopedic surgery, radiology, and pathology services with 24/7 emergency support. Established in 2005.",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "123, Healthcare Avenue",
+                "streetAddress": "Site No. 2, Sector-3",
                 "addressLocality": "Faridabad",
                 "addressRegion": "Haryana",
                 "postalCode": "110001",
@@ -289,16 +289,11 @@
             color: var(--primary);
             flex-shrink: 0;
         }
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.2rem;
+        .logo img {
+            height: 48px;
+            width: auto;
+            max-height: 48px;
+            object-fit: contain;
         }
         .logo span {
             color: var(--gray-800);
@@ -1533,6 +1528,116 @@
         }
 
         /* ============================================================
+                   LOCATIONS SECTION
+                   ============================================================ */
+        .locations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        .location-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+            transition: var(--transition);
+            height: 100%;
+        }
+        .location-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        .location-card .loc-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 14px;
+        }
+        .location-card h4 {
+            font-family: var(--font-primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+        .location-card .address {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+        .location-card .timing-block {
+            margin: 8px 0;
+        }
+        .location-card .timing-block .label {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--gray-700);
+            display: block;
+        }
+        .location-card .timing-block .time {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+        .location-card .service-tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 2px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin: 3px 4px 3px 0;
+        }
+        .location-card .pndt {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            margin-top: 8px;
+            border-top: 1px solid var(--gray-100);
+            padding-top: 10px;
+        }
+        .location-card .collab {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            margin-top: 6px;
+            font-weight: 500;
+        }
+        .location-card .collab span {
+            color: var(--primary);
+        }
+        body.dark .location-card {
+            background: var(--gray-100);
+            border-color: var(--gray-200);
+        }
+        body.dark .location-card h4 {
+            color: var(--gray-200);
+        }
+        body.dark .location-card .address {
+            color: var(--gray-400);
+        }
+        body.dark .location-card .timing-block .label {
+            color: var(--gray-300);
+        }
+        body.dark .location-card .timing-block .time {
+            color: var(--gray-400);
+        }
+        body.dark .location-card .pndt {
+            border-top-color: var(--gray-200);
+            color: var(--gray-400);
+        }
+        body.dark .location-card .collab {
+            color: var(--gray-400);
+        }
+
+        /* ============================================================
                    FOOTER
                    ============================================================ */
         .footer {
@@ -1552,6 +1657,15 @@
             font-size: 1.5rem;
             color: #fff;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-brand h3 img {
+            height: 40px;
+            width: auto;
+            max-height: 40px;
+            object-fit: contain;
         }
         .footer-brand h3 span {
             color: var(--accent);
@@ -1704,6 +1818,9 @@
                 grid-column: span 2;
                 grid-row: span 2;
             }
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1847,6 +1964,17 @@
             .facilities-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo img {
+                height: 38px;
+                max-height: 38px;
+            }
+            .footer-brand h3 img {
+                height: 32px;
+                max-height: 32px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1874,6 +2002,17 @@
             }
             .appointment-form {
                 padding: 20px 16px;
+            }
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo img {
+                height: 32px;
+                max-height: 32px;
+            }
+            .footer-brand h3 img {
+                height: 28px;
+                max-height: 28px;
             }
         }
 
@@ -2025,8 +2164,8 @@
     <header class="header" id="header" role="banner">
         <div class="container header-inner">
             <a href="#" class="logo" aria-label="Prakash Hospital Home">
-                <span class="logo-icon"><i class="fas fa-heartbeat"></i></span>
-                Prakash <span>Hospital</span>
+                <img src="image.png" alt="Prakash Hospital Logo" />
+                <span>Prakash Hospital</span>
             </a>
 
             <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
@@ -2037,6 +2176,7 @@
                 <a href="#radiology">Radiology</a>
                 <a href="#pathology">Pathology</a>
                 <a href="#facilities">Facilities</a>
+                <a href="#locations">Locations</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="#faq">FAQ</a>
@@ -2254,11 +2394,10 @@
                 <div class="dept-card" data-aos="fade-up" data-aos-delay="150">
                     <div class="icon-wrap"><i class="fas fa-sync-alt"></i></div>
                     <h4>Joint Replacement</h4>
-                    <p>Total knee replacement, hip replacement and revision surgeries performed with advanced robotics and minimally invasive techniques.</p>
+                    <p>Total knee replacement, hip replacement and revision surgeries performed with minimally invasive techniques.</p>
                     <ul>
                         <li>Total Knee Replacement</li>
                         <li>Hip Replacement</li>
-                        <li>Revision Surgery</li>
                     </ul>
                     <a href="#appointment" class="btn btn-primary btn-sm">Consult Now</a>
                 </div>
@@ -2406,6 +2545,82 @@
         </div>
     </section>
 
+    <!-- ======= LOCATIONS ======= -->
+    <section id="locations" style="background:var(--off-white);" aria-labelledby="locations-title">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Our Centres</span>
+                <h2 class="section-title" id="locations-title">Our <span class="highlight">Locations</span></h2>
+                <p class="section-subtitle">Conveniently located centres in Faridabad for your orthopedic and diagnostic needs.</p>
+            </div>
+
+            <div class="locations-grid">
+                <!-- UNIT 1 -->
+                <div class="location-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="loc-icon"><i class="fas fa-hospital"></i></div>
+                    <h4>UNIT 1</h4>
+                    <div class="address">Site No. 2, Sector-3, Faridabad</div>
+
+                    <div class="timing-block">
+                        <span class="label">Consultation Timings</span>
+                        <div class="time">10:30 AM – 1:30 PM</div>
+                        <div class="time">5:30 PM – 7:30 PM</div>
+                    </div>
+
+                    <div class="timing-block" style="margin-top:10px;">
+                        <span class="label">Diagnostic Centre Timings</span>
+                        <div class="time">11:00 AM – 2:00 PM</div>
+                    </div>
+
+                    <div style="margin-top:12px;">
+                        <span class="service-tag">Orthopedic Care</span>
+                        <span class="service-tag">Radiology</span>
+                        <span class="service-tag">Ultrasound</span>
+                        <span class="service-tag">Digital X-Ray</span>
+                        <span class="service-tag">Pathology</span>
+                    </div>
+
+                    <div class="pndt">
+                        <i class="fas fa-registered" style="color:var(--primary);"></i> PNDT Registration: <strong>PNDT/FBD/2014/131</strong>
+                    </div>
+                </div>
+
+                <!-- UNIT 2 -->
+                <div class="location-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="loc-icon"><i class="fas fa-clinic-medical"></i></div>
+                    <h4>UNIT 2</h4>
+                    <div class="address">410, Sector-15, Faridabad</div>
+
+                    <div class="timing-block">
+                        <span class="label">Dr. Rajeev Mittal Consultation Hours</span>
+                        <div class="time">9:30 AM – 10:30 AM</div>
+                        <div class="time">4:30 PM – 5:30 PM</div>
+                    </div>
+
+                    <div class="timing-block" style="margin-top:10px;">
+                        <span class="label">Diagnostic Centre Timings</span>
+                        <div class="time">9:00 AM – 11:00 AM</div>
+                        <div class="time">2:00 PM – 8:00 PM</div>
+                        <div class="time" style="color:#dc3545;font-weight:500;">Sunday Closed</div>
+                    </div>
+
+                    <div style="margin-top:12px;">
+                        <span class="service-tag">OPD Only</span>
+                        <span class="service-tag">Lab Collection</span>
+                    </div>
+
+                    <div class="collab">
+                        <i class="fas fa-flask" style="color:var(--primary);"></i> Lab &amp; Imaging <span>in collaboration with Mahajan</span>
+                    </div>
+
+                    <div class="pndt">
+                        <i class="fas fa-registered" style="color:var(--primary);"></i> PNDT Registration: <strong>PNDT/FBD/2017/292</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ======= FACILITIES ======= -->
     <section id="facilities" aria-labelledby="fac-title">
         <div class="container">
@@ -2425,8 +2640,8 @@
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="230"><i class="fas fa-flask"></i><h5>Laboratory</h5><p>Full-service diagnostic lab</p></div>
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="260"><i class="fas fa-chair"></i><h5>Waiting Lounge</h5><p>Comfortable waiting area</p></div>
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="290"><i class="fas fa-parking"></i><h5>Parking</h5><p>Ample parking space</p></div>
-                <div class="facility-card" data-aos="fade-up" data-aos-delay="320"><i class="fas fa-file-alt"></i><h5>Digital Reports</h5><p>Online report access</p></div>
-                <div class="facility-card" data-aos="fade-up" data-aos-delay="350"><i class="fas fa-truck"></i><h5>24×7 Ambulance</h5><p>Emergency ambulance service</p></div>
+                <!-- Digital Reports card removed as per instructions -->
+                <!-- 24×7 Ambulance card removed as per instructions -->
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="380"><i class="fas fa-wifi"></i><h5>Free WiFi</h5><p>High-speed internet for patients</p></div>
             </div>
         </div>
@@ -2645,13 +2860,13 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group"><label for="appEmail">Email</label><input type="email" id="appEmail" placeholder="your@email.com" /></div>
-                        <div class="form-group"><label for="appLocation">Location</label>
-                            <select id="appLocation"><option value="">Select location</option><option>New Delhi</option><option>Gurugram</option><option>Noida</option><option>Online Consult</option></select>
+                        <div class="form-group"><label for="appUnit">Preferred Unit</label>
+                            <select id="appUnit"><option value="">Select unit</option><option>Unit 1 – Sector-3</option><option>Unit 2 – Sector-15</option></select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group"><label for="appDept">Department *</label>
-                            <select id="appDept" required><option value="">Select department</option><option>Orthopedics</option><option>Radiology</option><option>Pathology</option><option>Trauma Care</option></select>
+                            <select id="appDept" required><option value="">Select department</option><option>Orthopedics</option><option>Radiology</option><option>Pathology</option></select>
                         </div>
                         <div class="form-group"><label for="appDoctor">Doctor</label>
                             <select id="appDoctor"><option value="">Select doctor</option><option>Dr. Rajeev Mittal</option><option>Dr. Richa Mittal</option></select>
@@ -2660,7 +2875,7 @@
                     <div class="form-row">
                         <div class="form-group"><label for="appDate">Preferred Date *</label><input type="date" id="appDate" required /></div>
                         <div class="form-group"><label for="appTime">Preferred Time</label>
-                            <select id="appTime"><option value="">Select time</option><option>09:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>02:00 PM</option><option>03:00 PM</option><option>04:00 PM</option><option>05:00 PM</option></select>
+                            <select id="appTime"><option value="">Select time</option><option>09:00 AM</option><option>09:30 AM</option><option>10:00 AM</option><option>10:30 AM</option><option>11:00 AM</option><option>11:30 AM</option><option>12:00 PM</option><option>02:00 PM</option><option>03:00 PM</option><option>04:00 PM</option><option>04:30 PM</option><option>05:00 PM</option><option>05:30 PM</option><option>06:00 PM</option><option>07:00 PM</option></select>
                         </div>
                     </div>
                     <div class="form-group"><label for="appMessage">Message</label><textarea id="appMessage" placeholder="Briefly describe your condition or any special requests..."></textarea></div>
@@ -2681,8 +2896,8 @@
 
             <div class="contact-grid">
                 <div class="contact-info" data-aos="fade-right">
-                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h6>Hospital Address</h6><p>123, Healthcare Avenue, New Delhi - 110001</p></div></div>
-                    <div class="contact-item"><i class="fas fa-microscope"></i><div><h6>Diagnostics Address</h6><p>456, Medical Complex, Gurugram - 122001</p></div></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h6>Unit 1 Address</h6><p>Site No. 2, Sector-3, Faridabad</p></div></div>
+                    <div class="contact-item"><i class="fas fa-map-pin"></i><div><h6>Unit 2 Address</h6><p>410, Sector-15, Faridabad</p></div></div>
                     <div class="contact-item"><i class="fas fa-phone"></i><div><h6>Phone</h6><p>+91-9876543210</p></div></div>
                     <div class="contact-item"><i class="fas fa-phone-alt" style="color:#dc3545;"></i><div><h6>Emergency Number</h6><p>+91-9876543211 (24/7)</p></div></div>
                     <div class="contact-item"><i class="fas fa-envelope"></i><div><h6>Email</h6><p>info@prakashhospital.com</p></div></div>
@@ -2705,7 +2920,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>Prakash <span>Hospital</span></h3>
+                    <h3>
+                        <img src="image.png" alt="Prakash Hospital Logo" />
+                        Prakash <span>Hospital</span>
+                    </h3>
                     <p>Trusted orthopedic and diagnostic healthcare in Faridabad since 2005. We are committed to healing with compassion and precision.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -2715,7 +2933,7 @@
                         <a href="#" aria-label="Google Business"><i class="fab fa-google"></i></a>
                     </div>
                 </div>
-                <div><h5>Quick Links</h5><ul><li><a href="#about">About Us</a></li><li><a href="#doctors">Doctors</a></li><li><a href="#orthopedic">Orthopedic</a></li><li><a href="#radiology">Radiology</a></li><li><a href="#pathology">Pathology</a></li><li><a href="#facilities">Facilities</a></li></ul></div>
+                <div><h5>Quick Links</h5><ul><li><a href="#about">About Us</a></li><li><a href="#doctors">Doctors</a></li><li><a href="#orthopedic">Orthopedic</a></li><li><a href="#radiology">Radiology</a></li><li><a href="#pathology">Pathology</a></li><li><a href="#locations">Locations</a></li><li><a href="#facilities">Facilities</a></li></ul></div>
                 <div><h5>Departments</h5><ul><li><a href="#orthopedic">Joint Replacement</a></li><li><a href="#orthopedic">Trauma Care</a></li><li><a href="#orthopedic">Sports Injury</a></li><li><a href="#radiology">Diagnostic Imaging</a></li><li><a href="#pathology">Pathology</a></li></ul></div>
                 <div><h5>Contact</h5><ul><li><a href="tel:+919876543210">+91-9876543210</a></li><li><a href="mailto:info@prakashhospital.com">info@prakashhospital.com</a></li><li><a href="#appointment">Book Appointment</a></li><li><a href="#contact">Find Us</a></li></ul></div>
             </div>
