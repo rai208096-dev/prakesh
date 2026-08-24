@@ -102,6 +102,8 @@
             line-height: 1.7;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            width: 100%;
+            max-width: 100%;
         }
 
         img {
@@ -168,80 +170,6 @@
         }
 
         /* ============================================================
-                   DARK MODE
-                   ============================================================ */
-        body.dark {
-            --white: #0f172a;
-            --off-white: #1e293b;
-            --gray-50: #1e293b;
-            --gray-100: #334155;
-            --gray-200: #475569;
-            --gray-300: #64748b;
-            --gray-400: #94a3b8;
-            --gray-500: #cbd5e1;
-            --gray-600: #e2e8f0;
-            --gray-700: #f1f5f9;
-            --gray-800: #f8fafc;
-            --gray-900: #ffffff;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
-            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.6);
-            --secondary-light: #1e293b;
-            --primary-light: #0f2a26;
-        }
-        body.dark .card,
-        body.dark .glass-card,
-        body.dark .doctor-card,
-        body.dark .facility-card,
-        body.dark .testimonial-card,
-        body.dark .faq-item {
-            background: var(--gray-100) !important;
-        }
-        body.dark .hero-stat-card {
-            background: rgba(15, 23, 42, 0.85) !important;
-        }
-        body.dark .header {
-            background: rgba(15, 23, 42, 0.95) !important;
-        }
-        body.dark .footer {
-            background: #0a0f1a !important;
-        }
-        body.dark .appointment-form input,
-        body.dark .appointment-form select,
-        body.dark .appointment-form textarea {
-            background: var(--gray-100);
-            color: var(--gray-800);
-            border-color: var(--gray-200);
-        }
-
-        /* ============================================================
-                   DARK MODE TOGGLE
-                   ============================================================ */
-        .dark-toggle {
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            color: var(--gray-600);
-            cursor: pointer;
-            padding: 6px 10px;
-            border-radius: 50%;
-            transition: var(--transition);
-            position: relative;
-        }
-        .dark-toggle:hover {
-            background: var(--gray-100);
-            color: var(--primary);
-        }
-        body.dark .dark-toggle {
-            color: var(--gray-400);
-        }
-        body.dark .dark-toggle:hover {
-            background: var(--gray-200);
-            color: var(--accent);
-        }
-
-        /* ============================================================
                    HEADER
                    ============================================================ */
         .header {
@@ -263,13 +191,6 @@
             height: var(--header-scroll-height);
             background: rgba(255, 255, 255, 0.97);
             box-shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
-        }
-        body.dark .header {
-            background: rgba(15, 23, 42, 0.92);
-            border-bottom-color: rgba(255, 255, 255, 0.04);
-        }
-        body.dark .header.scrolled {
-            background: rgba(15, 23, 42, 0.97);
         }
 
         .header-inner {
@@ -298,9 +219,6 @@
         .logo span {
             color: var(--gray-800);
         }
-        body.dark .logo span {
-            color: var(--gray-200);
-        }
 
         .nav {
             display: flex;
@@ -321,14 +239,6 @@
         .nav a.active {
             color: var(--primary);
             background: var(--primary-light);
-        }
-        body.dark .nav a {
-            color: var(--gray-400);
-        }
-        body.dark .nav a:hover,
-        body.dark .nav a.active {
-            color: var(--accent);
-            background: rgba(42, 157, 143, 0.15);
         }
 
         .header-cta {
@@ -729,12 +639,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-        body.dark .section-title {
-            color: var(--gray-200);
-        }
-        body.dark .section-subtitle {
-            color: var(--gray-400);
-        }
 
         /* ============================================================
                    ABOUT
@@ -788,9 +692,6 @@
             margin-bottom: 16px;
             line-height: 1.8;
         }
-        body.dark .about-text p {
-            color: var(--gray-400);
-        }
         .about-mission {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -823,13 +724,6 @@
             font-size: 0.8rem;
             color: var(--gray-500);
             margin: 0;
-        }
-        body.dark .about-mission-item {
-            background: var(--gray-100);
-            border-color: var(--gray-200);
-        }
-        body.dark .about-mission-item h4 {
-            color: var(--gray-200);
         }
 
         /* ============================================================
@@ -928,9 +822,6 @@
             font-size: 0.7rem;
             font-weight: 500;
         }
-        body.dark .doctor-tags span {
-            background: rgba(42, 157, 143, 0.15);
-        }
         .doctor-card .btn {
             width: 100%;
             margin-top: 4px;
@@ -1003,16 +894,6 @@
         .dept-card .btn-sm {
             margin-top: 10px;
         }
-        body.dark .dept-card {
-            background: var(--gray-100);
-            border-color: var(--gray-200);
-        }
-        body.dark .dept-card h4 {
-            color: var(--gray-200);
-        }
-        body.dark .dept-card p {
-            color: var(--gray-400);
-        }
 
         /* ============================================================
                    FACILITIES
@@ -1051,13 +932,6 @@
             font-size: 0.8rem;
             color: var(--gray-500);
             margin: 4px 0 0;
-        }
-        body.dark .facility-card {
-            background: var(--gray-100);
-            border-color: var(--gray-200);
-        }
-        body.dark .facility-card h5 {
-            color: var(--gray-200);
         }
 
         /* ============================================================
@@ -1104,13 +978,6 @@
             font-size: 0.8rem;
             color: var(--gray-500);
             margin: 4px 0 0;
-        }
-        body.dark .why-card {
-            background: var(--gray-100);
-            border-color: var(--gray-200);
-        }
-        body.dark .why-card h5 {
-            color: var(--gray-200);
         }
 
         /* ============================================================
@@ -1169,12 +1036,6 @@
             color: var(--gray-500);
             margin: 0;
         }
-        body.dark .timeline-item h6 {
-            color: var(--gray-200);
-        }
-        body.dark .timeline::before {
-            background: var(--gray-300);
-        }
 
         /* ============================================================
                    COUNTERS
@@ -1197,9 +1058,6 @@
             font-size: 0.9rem;
             color: var(--gray-500);
             font-weight: 500;
-        }
-        body.dark .counter-item .label {
-            color: var(--gray-400);
         }
 
         /* ============================================================
@@ -1295,16 +1153,6 @@
             font-size: 0.8rem;
             color: var(--gray-500);
         }
-        body.dark .testimonial-card {
-            background: var(--gray-100);
-            border-color: var(--gray-200);
-        }
-        body.dark .testimonial-card blockquote {
-            color: var(--gray-400);
-        }
-        body.dark .testimonial-card .author .name {
-            color: var(--gray-200);
-        }
 
         /* ============================================================
                    FAQ
@@ -1369,16 +1217,6 @@
             font-size: 0.9rem;
             color: var(--gray-500);
             line-height: 1.8;
-        }
-        body.dark .faq-item {
-            background: var(--gray-100);
-            border-color: var(--gray-200);
-        }
-        body.dark .faq-question {
-            color: var(--gray-200);
-        }
-        body.dark .faq-answer p {
-            color: var(--gray-400);
         }
 
         /* ============================================================
@@ -1466,13 +1304,6 @@
             padding: 14px;
             font-size: 1rem;
         }
-        body.dark .appointment-form {
-            background: var(--gray-100);
-            border-color: var(--gray-200);
-        }
-        body.dark .appointment-form label {
-            color: var(--gray-300);
-        }
 
         /* ============================================================
                    CONTACT
@@ -1519,12 +1350,6 @@
             height: 100%;
             min-height: 300px;
             border: 0;
-        }
-        body.dark .contact-info .contact-item {
-            border-bottom-color: var(--gray-200);
-        }
-        body.dark .contact-info .contact-item h6 {
-            color: var(--gray-200);
         }
 
         /* ============================================================
@@ -1612,29 +1437,6 @@
         }
         .location-card .collab span {
             color: var(--primary);
-        }
-        body.dark .location-card {
-            background: var(--gray-100);
-            border-color: var(--gray-200);
-        }
-        body.dark .location-card h4 {
-            color: var(--gray-200);
-        }
-        body.dark .location-card .address {
-            color: var(--gray-400);
-        }
-        body.dark .location-card .timing-block .label {
-            color: var(--gray-300);
-        }
-        body.dark .location-card .timing-block .time {
-            color: var(--gray-400);
-        }
-        body.dark .location-card .pndt {
-            border-top-color: var(--gray-200);
-            color: var(--gray-400);
-        }
-        body.dark .location-card .collab {
-            color: var(--gray-400);
         }
 
         /* ============================================================
@@ -1788,6 +1590,17 @@
         /* ============================================================
                    RESPONSIVE
                    ============================================================ */
+
+        /* Large screens / Desktop */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.4rem;
+            }
+            .container {
+                padding: 0 20px;
+            }
+        }
+
         @media (max-width: 1024px) {
             .hero h1 {
                 font-size: 3rem;
@@ -1821,15 +1634,27 @@
             .locations-grid {
                 grid-template-columns: 1fr;
             }
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 100%;
+            }
+            .hero p {
+                max-width: 100%;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
         }
 
         @media (max-width: 768px) {
             :root {
                 --header-height: 68px;
             }
+
             .header-cta .btn {
                 display: none;
             }
+
             .nav {
                 position: fixed;
                 top: var(--header-height);
@@ -1847,17 +1672,25 @@
                 max-height: calc(100vh - var(--header-height));
                 overflow-y: auto;
                 align-items: stretch;
+                z-index: 1000;
             }
             .nav.open {
                 transform: translateY(0);
             }
             .nav a {
-                padding: 10px 14px;
-                font-size: 0.9rem;
+                padding: 12px 14px;
+                font-size: 1rem;
                 border-radius: 8px;
+                white-space: normal;
+                text-align: left;
             }
             .hamburger {
                 display: flex;
+            }
+
+            .hero {
+                padding: calc(var(--header-height) + 30px) 0 60px;
+                min-height: auto;
             }
             .hero h1 {
                 font-size: 2.2rem;
@@ -1871,12 +1704,40 @@
             .hero-stat-card .number {
                 font-size: 1.4rem;
             }
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .hero-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 4px 14px 4px 10px;
+            }
+
             .section-title {
                 font-size: 1.8rem;
             }
+            .section-subtitle {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .section-header {
+                margin-bottom: 32px;
+            }
+
             .about-mission {
                 grid-template-columns: 1fr;
             }
+
             .doctors-grid {
                 grid-template-columns: 1fr;
             }
@@ -1890,6 +1751,7 @@
                 height: 80px;
                 font-size: 2rem;
             }
+
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1897,6 +1759,7 @@
                 grid-column: span 2;
                 grid-row: span 1;
             }
+
             .timeline {
                 flex-direction: column;
                 align-items: stretch;
@@ -1919,16 +1782,29 @@
             .timeline-item .step {
                 margin-bottom: 0;
                 flex-shrink: 0;
+                width: 40px;
+                height: 40px;
+                font-size: 0.85rem;
             }
+
             .counters-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
             }
             .counter-item .number {
                 font-size: 2rem;
             }
+
+            .appointment-form {
+                padding: 24px 18px;
+            }
             .appointment-form .form-row {
                 grid-template-columns: 1fr;
             }
+            .appointment-wrapper {
+                gap: 30px;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 24px;
@@ -1937,6 +1813,10 @@
                 flex-direction: column;
                 text-align: center;
             }
+            .footer-brand p {
+                max-width: 100%;
+            }
+
             .floating-buttons {
                 bottom: 16px;
                 right: 16px;
@@ -1955,6 +1835,7 @@
             .floating-btn .tooltip {
                 display: none;
             }
+
             .dept-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -1967,23 +1848,58 @@
             .locations-grid {
                 grid-template-columns: 1fr;
             }
+
             .logo img {
                 height: 38px;
                 max-height: 38px;
+            }
+            .logo {
+                font-size: 1.2rem;
             }
             .footer-brand h3 img {
                 height: 32px;
                 max-height: 32px;
             }
+
+            .contact-grid {
+                gap: 24px;
+            }
+
+            .faq-question {
+                font-size: 0.9rem;
+                padding: 14px 16px;
+            }
+            .faq-answer p {
+                font-size: 0.85rem;
+            }
+
+            .location-card {
+                padding: 24px 18px;
+            }
+            .location-card .address {
+                font-size: 0.85rem;
+            }
+            .location-card .timing-block .time {
+                font-size: 0.85rem;
+            }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .hero h1 {
                 font-size: 1.8rem;
             }
+            .hero-stat-card .number {
+                font-size: 1.2rem;
+            }
+            .hero-stat-card .label {
+                font-size: 0.65rem;
+            }
             .hero-actions .btn {
-                padding: 10px 20px;
-                font-size: 0.85rem;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
             }
             .dept-grid {
                 grid-template-columns: 1fr;
@@ -1997,22 +1913,200 @@
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .section-title {
-                font-size: 1.5rem;
+            .counters-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .counter-item .number {
+                font-size: 1.6rem;
+            }
+            .counter-item .label {
+                font-size: 0.8rem;
             }
             .appointment-form {
-                padding: 20px 16px;
+                padding: 18px 14px;
             }
-            .locations-grid {
-                grid-template-columns: 1fr;
+            .appointment-info h3 {
+                font-size: 1.3rem;
+            }
+            .contact-info .contact-item {
+                padding: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.9rem;
+            }
+            .hero-badge {
+                font-size: 0.65rem;
+            }
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .hero-stat-card {
+                padding: 12px 10px;
+            }
+            .hero-stat-card .number {
+                font-size: 1.1rem;
+            }
+            .hero-actions .btn {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .section-subtitle {
+                font-size: 0.85rem;
+            }
+            .container {
+                padding: 0 14px;
+            }
+            .facilities-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .facility-card {
+                padding: 16px 10px;
+            }
+            .facility-card i {
+                font-size: 1.6rem;
+            }
+            .facility-card h5 {
+                font-size: 0.8rem;
+            }
+            .facility-card p {
+                font-size: 0.7rem;
+            }
+            .dept-card {
+                padding: 18px 16px;
+            }
+            .dept-card .icon-wrap {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+            .dept-card h4 {
+                font-size: 1rem;
+            }
+            .dept-card p {
+                font-size: 0.85rem;
+            }
+            .dept-card ul {
+                font-size: 0.8rem;
+            }
+            .gallery-grid {
+                gap: 8px;
+            }
+            .location-card {
+                padding: 18px 14px;
+            }
+            .location-card h4 {
+                font-size: 1rem;
+            }
+            .floating-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+            .floating-btn.appointment-sticky {
+                height: 36px;
+                font-size: 0.7rem;
+                padding: 0 10px;
             }
             .logo img {
                 height: 32px;
                 max-height: 32px;
             }
+            .logo {
+                font-size: 1rem;
+            }
+            .footer-brand h3 {
+                font-size: 1.2rem;
+            }
             .footer-brand h3 img {
                 height: 28px;
                 max-height: 28px;
+            }
+            .doctor-card-top {
+                padding: 16px 16px 0;
+            }
+            .doctor-card-body {
+                padding: 12px 16px 16px;
+            }
+            .doctor-avatar {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            .doctor-info h3 {
+                font-size: 1rem;
+            }
+            .doctor-info .qualifications {
+                font-size: 0.7rem;
+            }
+            .doctor-info .exp {
+                font-size: 0.7rem;
+            }
+            .testimonial-card {
+                padding: 20px 16px;
+            }
+            .testimonial-card blockquote {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .hero-stat-card .number {
+                font-size: 1rem;
+            }
+            .hero-stat-card .label {
+                font-size: 0.6rem;
+            }
+            .hero-actions .btn {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+            .container {
+                padding: 0 10px;
+            }
+            .facilities-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .facility-card {
+                padding: 12px 8px;
+            }
+            .facility-card i {
+                font-size: 1.4rem;
+            }
+            .facility-card h5 {
+                font-size: 0.7rem;
+            }
+            .facility-card p {
+                font-size: 0.65rem;
+            }
+            .btn {
+                font-size: 0.75rem;
+                padding: 8px 14px;
+            }
+            .btn-sm {
+                padding: 5px 10px;
+                font-size: 0.7rem;
             }
         }
 
@@ -2106,12 +2200,6 @@
         .success-popup .popup-card .btn {
             min-width: 120px;
         }
-        body.dark .success-popup .popup-card {
-            background: var(--gray-100);
-        }
-        body.dark .success-popup .popup-card h4 {
-            color: var(--gray-200);
-        }
 
         /* Image placeholder with gradient */
         .img-placeholder {
@@ -2131,7 +2219,7 @@
             background: var(--primary) !important;
         }
 
-        /* AOS override for dark */
+        /* AOS override */
         [data-aos] {
             pointer-events: none;
         }
@@ -2185,9 +2273,6 @@
             </nav>
 
             <div class="header-cta">
-                <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                </button>
                 <a href="#appointment" class="btn btn-primary btn-sm">Book Appointment</a>
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span><span></span><span></span>
@@ -2391,9 +2476,7 @@
                     <a href="#appointment" class="btn btn-primary btn-sm">Consult Now</a>
                 </div>
 
-                
-
-                
+               
 
                 <div class="dept-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="icon-wrap"><i class="fas fa-running"></i></div>
@@ -2629,7 +2712,7 @@
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="290"><i class="fas fa-parking"></i><h5>Parking</h5><p>Ample parking space</p></div>
                 <!-- Digital Reports card removed as per instructions -->
                 <!-- 24×7 Ambulance card removed as per instructions -->
-                 
+               
             </div>
         </div>
     </section>
@@ -3021,22 +3104,6 @@
         });
         backTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // ============================================================
-        // DARK MODE
-        // ============================================================
-        const darkToggle = document.getElementById('darkToggle');
-        let darkMode = localStorage.getItem('darkMode') === 'true';
-        if (darkMode) {
-            document.body.classList.add('dark');
-            darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        darkToggle.addEventListener('click', () => {
-            darkMode = !darkMode;
-            document.body.classList.toggle('dark');
-            darkToggle.innerHTML = darkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-            localStorage.setItem('darkMode', darkMode);
         });
 
         // ============================================================
