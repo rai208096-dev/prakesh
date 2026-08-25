@@ -1561,53 +1561,6 @@
         }
 
         /* ============================================================
-                   VIDEO SECTION
-                   ============================================================ */
-        .video-wrapper {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            background: var(--gray-900);
-            aspect-ratio: 16/9;
-            max-width: 900px;
-            margin: 0 auto;
-            box-shadow: var(--shadow-xl);
-            width: 100%;
-        }
-        .video-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .video-wrapper .play-big {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.4rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: var(--transition);
-            color: #fff;
-            cursor: pointer;
-            z-index: 2;
-        }
-        .video-wrapper .play-big:hover {
-            transform: translate(-50%, -50%) scale(1.06);
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        /* ============================================================
                    RESPONSIVE — IMPROVED & COMPREHENSIVE
                    ============================================================ */
 
@@ -1675,7 +1628,7 @@
             .hero-content {
                 max-width: 100%;
             }
-            .section {
+            section {
                 padding: 60px 0;
             }
             .hero {
@@ -2044,7 +1997,7 @@
             .contact-info .contact-item {
                 padding: 10px 0;
             }
-            .section {
+            section {
                 padding: 40px 0;
             }
             .container {
@@ -3130,8 +3083,6 @@
                     <a href="#appointment" class="btn btn-primary btn-sm">Consult Now</a>
                 </div>
 
-               
-
                 <div class="dept-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="icon-wrap"><i class="fas fa-running"></i></div>
                     <h4>Sports Injury</h4>
@@ -3348,7 +3299,7 @@
 
             <div class="facilities-grid">
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="50"><i class="fas fa-syringe"></i><h5>Modern OT</h5><p>State-of-the-art operation theatres</p></div>
-                
+               
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="110"><i class="fas fa-wheelchair"></i><h5>Wheelchair Access</h5><p>Fully accessible for all</p></div>
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="140"><i class="fas fa-bed"></i><h5>Private Rooms</h5><p>Comfortable private &amp; shared rooms</p></div>
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="170"><i class="fas fa-heartbeat"></i><h5>ICU</h5><p>Intensive care with advanced monitoring</p></div>
@@ -3356,7 +3307,6 @@
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="230"><i class="fas fa-flask"></i><h5>Laboratory</h5><p>Full-service diagnostic lab</p></div>
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="260"><i class="fas fa-chair"></i><h5>Waiting Lounge</h5><p>Comfortable waiting area</p></div>
                 <div class="facility-card" data-aos="fade-up" data-aos-delay="290"><i class="fas fa-parking"></i><h5>Parking</h5><p>Ample parking space</p></div>
-               
             </div>
         </div>
     </section>
@@ -3440,21 +3390,6 @@
         </div>
     </section>
 
-    <!-- ======= VIDEO SECTION ======= -->
-    <section id="video" style="background:var(--off-white);" aria-labelledby="video-title">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-badge">Video</span>
-                <h2 class="section-title" id="video-title">Watch <span class="highlight">Our Story</span></h2>
-                <p class="section-subtitle">Learn more about our hospital, doctors and patient experiences.</p>
-            </div>
-
-            <div class="video-wrapper" data-aos="zoom-in" data-aos-duration="700">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&rel=0" title="Hospital introduction video" allowfullscreen loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
     <!-- ======= TESTIMONIALS ======= -->
     <section id="testimonials" aria-labelledby="test-title">
         <div class="container">
@@ -3534,10 +3469,7 @@
                     <button class="faq-question" aria-expanded="false">How long is fracture recovery? <i class="fas fa-chevron-down"></i></button>
                     <div class="faq-answer"><p>Fracture recovery depends on the type and severity of the fracture. Simple fractures may heal in 6-8 weeks, while complex fractures may take 3-6 months. Our orthopedic team will provide a tailored recovery plan with physiotherapy for optimal healing.</p></div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Do you provide physiotherapy? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Yes, we have an in-house physiotherapy and rehabilitation department. Our expert physiotherapists provide post-surgery rehab, exercise therapy, pain management and sports injury rehabilitation services.</p></div>
-                </div>
+            
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">How can I contact doctors directly? <i class="fas fa-chevron-down"></i></button>
                     <div class="faq-answer"><p>You can contact our doctors by booking an appointment through our website or by calling our reception. For urgent queries, you can also reach out via our WhatsApp number or email at info@prakashhospital.com.</p></div>
