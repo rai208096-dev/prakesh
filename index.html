@@ -1080,51 +1080,55 @@
             font-weight: 500;
         }
 
-        /* ============================================================
-                   GALLERY
-                   ============================================================ */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-        }
-        .gallery-grid .gallery-item {
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            aspect-ratio: 1/1;
-            background: var(--gray-200);
-            transition: var(--transition);
-        }
-        .gallery-grid .gallery-item:nth-child(1) {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-        .gallery-grid .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        .gallery-grid .gallery-item:hover img {
-            transform: scale(1.04);
-        }
-        .gallery-item .overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(10, 110, 94, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-            color: #fff;
-            font-size: 1.6rem;
-        }
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
+        /* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.gallery-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ZOOM IMAGE */
+.image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* CLOSE BUTTON */
+.image-modal .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
 
         /* ============================================================
                    TESTIMONIALS
@@ -2833,6 +2837,24 @@
         [data-aos].aos-animate {
             pointer-events: auto;
         }
+        /* =========================
+   ABOUT IMAGE
+========================= */
+
+.about-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 30%;
+    min-height: 280px;
+    display: block;
+    object-fit: cover;
+    border-radius: 16px;
+}
     </style>
 </head>
 <body>
@@ -2940,57 +2962,148 @@
             </div>
         </div>
     </section>
+<!-- ======= ABOUT ======= -->
+<section id="about" aria-labelledby="about-title">
 
-    <!-- ======= ABOUT ======= -->
-    <section id="about" aria-labelledby="about-title">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-badge">About Us</span>
-                <h2 class="section-title" id="about-title">About <span class="highlight">Prakash Hospital</span></h2>
-                <p class="section-subtitle">Trusted orthopedic and diagnostic healthcare in Faridabad since 2005.</p>
-            </div>
+    <div class="container">
 
-            <div class="about-grid">
-                <div class="about-image" data-aos="fade-right" data-aos-duration="700">
-                    <div class="img-placeholder" style="min-height:280px;flex-direction:column;gap:8px;">
-                        <i class="fas fa-hospital" style="font-size:3rem;opacity:0.3;"></i>
-                        <span style="font-weight:400;">Prakash Hospital – Excellence in Care</span>
-                    </div>
-                    <!-- <div class="play-btn"><i class="fas fa-play"></i></div> -->
-                </div>
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
 
-                <div class="about-text" data-aos="fade-left" data-aos-duration="700">
-                    <p>
-                        <strong>Prakash Hospital</strong>, established in 2005, is a leading orthopedic and diagnostic care center in Faridabad. We are dedicated to providing trusted, quality healthcare through advanced medical technology, experienced specialists, and compassionate patient care.
-                    </p>
-                    <p>
-                        Our hospital has performed more than 2 lakh ultrasound scans, treated over 1.5 lakh patients, and completed 15,000+ orthopedic procedures. We offer 24/7 orthopedic emergency support and a full range of radiology and pathology services to ensure accurate diagnosis and effective treatment.
-                    </p>
-                    <p>
-                        Our goal is to provide <strong>ethical, affordable, and evidence-based healthcare</strong> that prioritizes patient well-being and long-term recovery.
-                    </p>
+            <span class="section-badge">
+                About Us
+            </span>
 
-                    <div class="about-mission">
-                        <div class="about-mission-item" data-aos="fade-up" data-aos-delay="100">
-                            <i class="fas fa-bullseye"></i>
-                            <h4>Mission</h4>
-                            <p>To heal with compassion and precision.</p>
-                        </div>
-                        <div class="about-mission-item" data-aos="fade-up" data-aos-delay="200">
-                            <i class="fas fa-eye"></i>
-                            <h4>Vision</h4>
-                            <p>To provide trusted and quality orthopedic and diagnostic healthcare in Faridabad.</p>
-                        </div>
-                        <div class="about-mission-item" data-aos="fade-up" data-aos-delay="300">
-                            <i class="fas fa-gem"></i>
-                            <h4>Core Values</h4>
-                            <p>Integrity, Excellence, Empathy.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2 class="section-title" id="about-title">
+                About <span class="highlight">Prakash Hospital</span>
+            </h2>
+
+            <p class="section-subtitle">
+                Trusted orthopedic and diagnostic healthcare in Faridabad since 2005.
+            </p>
+
         </div>
-    </section>
+
+
+        <!-- About Content -->
+        <div class="about-grid">
+
+            <!-- About Image -->
+            <div 
+                class="about-image" 
+                data-aos="fade-right" 
+                data-aos-duration="700"
+            >
+
+                <img src="SEC 15.jpeg" alt="Prakash Hospital – Excellence in Care">
+            </div>
+
+
+            <!-- About Text -->
+            <div 
+                class="about-text" 
+                data-aos="fade-left" 
+                data-aos-duration="700"
+            >
+
+                <p>
+                    <strong>Prakash Hospital</strong>, established in 2005, 
+                    is a leading orthopedic and diagnostic care center in 
+                    Faridabad. We are dedicated to providing trusted, 
+                    quality healthcare through advanced medical technology, 
+                    experienced specialists, and compassionate patient care.
+                </p>
+
+
+                <p>
+                    Our hospital has performed more than 2 lakh ultrasound 
+                    scans, treated over 1.5 lakh patients, and completed 
+                    15,000+ orthopedic procedures. We offer 24/7 orthopedic 
+                    emergency support and a full range of radiology and 
+                    pathology services to ensure accurate diagnosis and 
+                    effective treatment.
+                </p>
+
+
+                <p>
+                    Our goal is to provide 
+                    <strong>ethical, affordable, and evidence-based healthcare</strong> 
+                    that prioritizes patient well-being and long-term recovery.
+                </p>
+
+
+                <!-- Mission / Vision / Values -->
+                <div class="about-mission">
+
+                    <!-- Mission -->
+                    <div 
+                        class="about-mission-item" 
+                        data-aos="fade-up" 
+                        data-aos-delay="100"
+                    >
+
+                        <i class="fas fa-bullseye"></i>
+
+                        <h4>
+                            Mission
+                        </h4>
+
+                        <p>
+                            To heal with compassion and precision.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Vision -->
+                    <div 
+                        class="about-mission-item" 
+                        data-aos="fade-up" 
+                        data-aos-delay="200"
+                    >
+
+                        <i class="fas fa-eye"></i>
+
+                        <h4>
+                            Vision
+                        </h4>
+
+                        <p>
+                            To provide trusted and quality orthopedic 
+                            and diagnostic healthcare in Faridabad.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Core Values -->
+                    <div 
+                        class="about-mission-item" 
+                        data-aos="fade-up" 
+                        data-aos-delay="300"
+                    >
+
+                        <i class="fas fa-gem"></i>
+
+                        <h4>
+                            Core Values
+                        </h4>
+
+                        <p>
+                            Integrity, Excellence, Empathy.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- ======= DOCTORS ======= -->
     <section id="doctors" style="background:var(--off-white);" aria-labelledby="doctors-title">
@@ -3371,63 +3484,94 @@
 
  <!-- ======= GALLERY ======= -->
 <section id="gallery" aria-labelledby="gallery-title">
+
     <div class="container">
+
         <div class="section-header" data-aos="fade-up">
             <span class="section-badge">Gallery</span>
+
             <h2 class="section-title" id="gallery-title">
                 Our <span class="highlight">Facility</span>
             </h2>
+
             <p class="section-subtitle">
                 A glimpse into our modern hospital and patient care environment.
             </p>
         </div>
 
+
         <div class="gallery-grid" data-aos="fade-up">
 
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openImage(this)">
                 <img src="building.png" alt="Prakash Hospital Building">
-                <div class="overlay"><i class="fas fa-expand"></i></div>
+                <div class="overlay">
+                    <i class="fas fa-expand"></i>
+                </div>
             </div>
 
-             <div class="gallery-item">
+
+            <div class="gallery-item" onclick="openImage(this)">
                 <img src="SEC 15.jpeg" alt="Prakash Hospital SEC 15 Building">
-                <div class="overlay"><i class="fas fa-expand"></i></div>
+                <div class="overlay">
+                    <i class="fas fa-expand"></i>
+                </div>
             </div>
 
-            <div class="gallery-item">
+
+            <div class="gallery-item" onclick="openImage(this)">
                 <img src="reception.png" alt="Prakash Hospital Reception">
-                <div class="overlay"><i class="fas fa-expand"></i></div>
+                <div class="overlay">
+                    <i class="fas fa-expand"></i>
+                </div>
             </div>
 
-          
 
-            <div class="gallery-item">
+            <div class="gallery-item" onclick="openImage(this)">
                 <img src="Docter.jpeg" alt="Doctor Consultation">
-                <div class="overlay"><i class="fas fa-expand"></i></div>
+                <div class="overlay">
+                    <i class="fas fa-expand"></i>
+                </div>
             </div>
 
-              <div class="gallery-item">
+
+            <div class="gallery-item" onclick="openImage(this)">
                 <img src="waiting .png" alt="Patient Care">
-                <div class="overlay"><i class="fas fa-expand"></i></div>
+                <div class="overlay">
+                    <i class="fas fa-expand"></i>
+                </div>
             </div>
-            
-            <div class="gallery-item">
+
+
+            <div class="gallery-item" onclick="openImage(this)">
                 <img src="ultrasound.JPG" alt="Radiology Room">
-                <div class="overlay"><i class="fas fa-expand"></i></div>
+                <div class="overlay">
+                    <i class="fas fa-expand"></i>
+                </div>
             </div>
 
-            <div class="gallery-item">
+
+            <div class="gallery-item" onclick="openImage(this)">
                 <img src="waitin2.png" alt="Hospital Waiting Area">
-                <div class="overlay"><i class="fas fa-expand"></i></div>
+                <div class="overlay">
+                    <i class="fas fa-expand"></i>
+                </div>
             </div>
-
-           
-
-          
 
         </div>
+
     </div>
 </section>
+
+
+<!-- ======= IMAGE ZOOM ======= -->
+
+<div class="image-modal" id="imageModal">
+
+    <button class="close-btn" onclick="closeImage()">&times;</button>
+
+    <img id="zoomImage" src="" alt="">
+
+</div>
 
     <!-- ======= TESTIMONIALS ======= -->
     <section id="testimonials" aria-labelledby="test-title">
@@ -3941,7 +4085,59 @@
                 }
             });
         });
+        // ============================================================
+// GALLERY IMAGE ZOOM
+// ============================================================
 
+function openImage(item) {
+    const image = item.querySelector('img');
+    const modal = document.getElementById('imageModal');
+    const zoomImage = document.getElementById('zoomImage');
+
+    if (!image || !modal || !zoomImage) return;
+
+    zoomImage.src = image.src;
+    zoomImage.alt = image.alt;
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+
+function closeImage() {
+    const modal = document.getElementById('imageModal');
+
+    if (!modal) return;
+
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+
+// Click outside image = close
+const imageModal = document.getElementById('imageModal');
+
+if (imageModal) {
+
+    imageModal.addEventListener('click', function (e) {
+
+        if (e.target === imageModal) {
+            closeImage();
+        }
+
+    });
+
+}
+
+
+// ESC key = close
+document.addEventListener('keydown', function (e) {
+
+    if (e.key === 'Escape') {
+        closeImage();
+    }
+
+});
         console.log('🚀 Prakash Hospital – Premium Healthcare Website Loaded.');
     </script>
 
